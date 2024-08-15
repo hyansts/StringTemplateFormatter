@@ -3,6 +3,15 @@
 `StringTemplateFormatter` is a Java utility class that allows you to create and format custom templates with named
 placeholders. The placeholders can be replaced in any order, making it flexible for dynamic string construction.
 
+## Tests
+
+This project uses JUnit 5 and Maven, to run tests execute `mvn clean test` at the project folder.
+
+## BenchMarks
+
+This project uses JMH (Java Microbenchmark Harness), to run benchmarks first build the project with `mvn clean install`
+then execute `java -jar target/benchmarks.jar` at the project folder.
+
 ## Features
 
 * **Customizable Placeholders**: Placeholders are identified by a string key surrounded by a prefix and suffix (default:
@@ -20,7 +29,7 @@ String example() {
 	StringTemplateFormatter formatter = new StringTemplateFormatter();
 	formatter.put("fruit", "Apple");
 	formatter.put("name", "John");
-	return formatter.format("Example: ${fruit}, ${number}, ${name}"); 
+	return formatter.format("Example: ${fruit}, ${number}, ${name}");
 	// Output: "Example: Apple, ${number}, John"
 }
 ```
@@ -33,7 +42,7 @@ You can customize the prefix and suffix used to identify placeholders:
 String example() {
 	StringTemplateFormatter formatter = new StringTemplateFormatter("<%", "%>");
 	formatter.put("item", "Book");
-	return formatter.format("Buy a <%item%> today!"); 
+	return formatter.format("Buy a <%item%> today!");
 	// Output: "Buy a Book today!"
 }
 ```
