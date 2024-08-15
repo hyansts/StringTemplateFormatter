@@ -1,5 +1,3 @@
-package com.github.hyansts;
-
 import java.util.HashMap;
 import java.util.Map;
 
